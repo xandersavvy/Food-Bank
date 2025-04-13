@@ -1,0 +1,25 @@
+minimum_cumulusci_version: '4.3.0'
+project:
+    name: PythonProject
+    package:
+        name: Food-Bank
+        api_version: '62.0'
+    git:
+        default_branch: 'main'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/PythonProject/tests
+            options:
+                outputdir: robot/PythonProject/results
+
+    robot_testdoc:
+        options:
+            path: robot/PythonProject/tests
+            output: robot/PythonProject/doc/PythonProject_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
